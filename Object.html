@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Object/js </title>
+
+    <style>
+        body{
+            margin: 0px; padding: 0px;height: 100vh;
+            background-image: linear-gradient(135deg, rgba(40, 94, 196, 0.719), rgba(61, 179, 169, 0.801), rgba(255, 0, 200, 0.452));
+        display: flex; }
+        h2{ margin: 14rem auto;
+            font-size: 5rem;
+            color: rgb(223, 223, 223);
+        }
+    </style>
+</head>
+<body>
+    <h2> JavaScript Object Methods  </h2>
+
+    <script>
+
+        let school = {
+            name:'Hari', 
+            Rollno: "1230", 
+            standard: "V",
+            age: "10",
+            subject: function(){
+                return `${this.name} ${this.age} ${this.standard}`;
+            }
+        }
+        console.log(school);
+        console.log(school.name);
+        console.log(school.subject());
+
+    </script>
+</body>
+</html>

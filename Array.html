@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h4>*** Please Rate a Service *** </h4>
+    <label for="very-poor"> <input type="radio" name="rate" value="very-poor" id="very_poor"> Very Poor </label>
+    <label for="poor"> <input type="radio" name="rate" value="poor"> Poor </label>
+    <label for="ok"> <input type="radio" name="rate" value="ok" > Ok </label>
+    <label for="good"> <input type="radio" name="rate" value="good"> Good </label>
+    <label for="very-good"> <input type="radio" name=" " value="very-good"> Very-good </label>
+
+<p> <button id="btnrate">Submit</button> </p>    
+<p id="output"> </p>
+
+
+
+
+<h1>Javascript  DOM .getElementsByName :  </h1>
+
+<h2>1st Heading</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde </p>
+<h2>2nd</h2><p>debitis doloremque ab officia eos dolores, dolore nisi voluptas in sapiente</p>
+<h2>3rd</h2><p> odit laboriosam qui accusamus, voluptatum possimus necessitatibus eaque ut!</p>
+ 
+<button id="btnCount">Count h2 &#128512;</button>
+
+
+
+    <script>
+        let book = ["1","2","3","4"]
+
+        book.push("5")
+        console.log("Push Add value into last Element",book)
+
+        book.pop()
+        console.log("POP Remove last value: ",book)
+
+        book.shift()
+        console.log("Shift Remove first Element : ",book)
+
+        book.unshift("6")
+        console.log("Unshift Add Element into Front : ",book)
+
+
+        // Anonymous Function
+        book.forEach(function(x){
+            console.log(x);
+        });
+
+        // Anonymous Function Simple method  
+        book.forEach((x,index)=>{
+            console.log("Simple : ",x,index);
+        });
+        
+
+        const newArray = ["a","b","c"]
+        const newArray1 = ["d","e"]
+        console.log("New Array : ", newArray);
+        console.log("New Array1 : ", newArray1);
+
+        const byee = newArray.concat(newArray1);
+        console.log("Concat : ",byee)
+
+        
+        // searching function
+
+        let juiceShop = ["Apple","Orange","Pinegrant"];
+        let customer = "Apple";
+        let waiter = juiceShop.indexOf(customer);
+        if (waiter>=0){
+            console.log(`******* &#128512; Yes ${customer} is Here ********`)
+        }
+        else{console.log(` ------ > &#128543; NO, ${customer} juice is Not here Sir < --------- `)}
+
+
+
+
+    // includes Array;
+    let data = [1, 2.5,"hai",null, undefined, true, false];
+    console.log("Mixed Data : ",data);
+    console.log(data.includes());
+
+let masters = [
+    {id: 1, name:"Ram", department: "Karate"},
+    {id: 2, name:"Ramar", department: "Yoga"},
+    {id: 3, name:"Vicky", department: "Dance"},
+]
+
+console.log(masters);
+
+masters.forEach((master) => {
+    console.log(`Master Id : ${masters.id}`)
+    console.log(`Name : ${master.name}`);
+    console.log(`Sport : ${master.department} `);
+    console.log(" + ----- + ----- +")
+});
+
+console.log("Filter Anther Methods : ")
+
+let master = masters.find((x) => x.id === 3)
+console.log("Masters Details : ", master); 
+
+let filt =  masters.filter((x) => x.id >0);
+console.log(filt);
+
+        // let parag = document.getElementsByName('p');
+        // console.log(parag);
+
+        // let btn = document.getElementById('btnCount');
+        // btn.addEventListener('click', () => {
+        //     let headings = document.getElementsByTagName('h2');
+        //     // alert(`The number of H2 tags: ${headings.length}`);
+        //     for( let i=0 ; i<headings.length; i++){
+        //         headings.item(i).innerHTML = `modifed text buddy ${i + 1}`
+
+        //     };
+        // });
+
+        // let bttn = document.getElementById('btnCount');
+        // bttn.addEventListener('click', ()=> {
+        //     let heeading = document.getElementsByTagName('p');
+        //     console.log("heeading");
+        //     alert(`the number of h1 tags: ${heeading.length}`);
+        // });
+
+
+    // let btn1 = document.getElementById("btnrate");
+    // let output = document.getElementById("output");
+
+    // btn1.addEventListener('click', () => {
+    //     let rates = document.getElementsByName('rate');
+    //     rates.forEach( (rate) => { 
+    //         if(rate.checked) {output.innerText = `You selected: ${rate.value}`;}
+    //     });
+    // });
+
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

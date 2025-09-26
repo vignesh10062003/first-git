@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toy E-commerce Search</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.search-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 400px;
+}
+
+.search-container h2 {
+  margin-bottom: 15px;
+  color: #ff6600;
+}
+
+#searchInput {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #ff6600;
+  border-radius: 8px;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e65c00;
+}
+
+#results {
+  margin-top: 20px;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <h2>🔍 Toy E-commerce Search</h2>
+    <input type="text" id="searchInput" placeholder="Search for toys...">
+    <button onclick="searchProduct()">Search</button>
+    <div id="results"></div>
+  </div>
+  
+  <script src="script.js"></script>
+
+<script>
+    async function searchProduct() {
+    const searchValue = document.getElementById("searchInput").value.toLowerCase();
+    const resultsDiv = document.getElementById("results");
+
+    // Fetch product list from JSON
+    const response = await fetch("products.json");
+    const products = await response.json();
+
+    // Filter products
+    const filtered = products.filter(item => item.toLowerCase().includes(searchValue));
+
+    // Display results
+    resultsDiv.innerHTML = "";
+    if (filtered.length > 0) {
+        filtered.forEach(product => {
+        const p = document.createElement("p");
+        p.textContent = product;
+        resultsDiv.appendChild(p);
+        });
+    } else {
+        resultsDiv.innerHTML = `<p style="color:red; font-weight:600; font-style:bolder;">Your request word is not inside.</p>`;
+    }
+    }
+</script>
+
+</body>
+</html>
